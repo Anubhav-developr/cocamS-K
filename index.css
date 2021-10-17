@@ -43,6 +43,7 @@
 #video {
     border: 2px solid rgb(230, 22, 22);
     width: 25%;
-    margin-left: 31pc;
+   display:block;
+   margin:0 auto;
 }
 
