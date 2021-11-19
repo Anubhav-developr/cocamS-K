@@ -1,9 +1,10 @@
 * {
-    background-color: rgb(212, 202, 221);
+    /* background-color: rgb(212, 202, 221); */
 
 }
 .c1 {
     border: 5px solid coral;
+    background-color: rgb(212, 202, 221);
 }
 
 
@@ -33,7 +34,7 @@
   }
   .btns {
      text-align: center;
-     margin-bottom: 240px;
+     margin-bottom: 105px;
   }
 .l1{
 
@@ -45,4 +46,63 @@
     width: 25%;
     margin-left: 31pc;
 }
+  /*   header      */
 
+@font-face {
+    font-family: myFirstFont;
+    src: url('./Fruktur-Regular.ttf');
+  }
+
+
+  body {
+      box-sizing:border-box;
+      padding:0;
+      margin:0;
+
+  }
+
+
+.flexWrapper {
+    display: flex;
+    padding: 0 0 0 1rem;
+    background-color: #a08484!important;
+    clip-path: polygon(0 0, 96% 11%, 92% 76%, 0% 100%);
+    font-family: myFirstFont;
+
+}
+
+.sub-flexbox{
+    display:flex;
+}
+
+.sub-flexbox div {
+    padding: 0 0 0 2rem;
+}
+
+header {
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+background-color:yellow;
+   
+}
+
+.takepicture button{
+    width:10%;
+    height: 10%;
+}
+
+.takepicture {
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+}
+.canvas canvas {
+   
+    border: 1px solid rgb(122, 37, 37);
+}
+
+.canvas {
+    display: flex;
+    justify-content:center;
+}
