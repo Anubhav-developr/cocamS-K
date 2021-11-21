@@ -5,12 +5,14 @@
 .c1 {
     border: 5px solid coral;
     background-color: rgb(212, 202, 221);
+
 }
 
 
 .c3 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: center;
+    
 }
 .button {
     padding: 15px 25px;
@@ -100,11 +102,28 @@ background-color:yellow;
 }
 .canvas canvas {
    
-    border: 1px solid rgb(122, 37, 37);
+    border: 2px solid rgb(230, 22, 22);
 }
 
 .canvas {
     display: flex;
+    justify-content:center;
+   
+}
+
+#el {
+    background-color:yellow;
+    box-shadow:2px 3px 6px grey;
+    text-decoration:none;
+    color:currentColor;
+}
+
+#el:hover {
+    box-shadow:8px 6px 2px grey; 
+    color:rgb(214, 55, 55);
+}
+.save {
+    display:flex;
     justify-content:center;
 }
 

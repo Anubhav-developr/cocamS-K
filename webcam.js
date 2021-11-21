@@ -7,10 +7,18 @@ function capture() {
    let width = canvas.width;
    let height = canvas.height;
     context.drawImage(video, 0, 0, width, height);
-    var data = canvas.toDataURL('image/png');
+   
     window.confirm("Are you sure you want to capture?");   
 
   
+}
+
+var save = function (el){
+  var canvas = document.getElementById('canvas');
+  document.getElementById("el").style.boxShadow = "0";
+var data = canvas.toDataURL('image/jpg');
+el.href=data;
+
 }
 
 
