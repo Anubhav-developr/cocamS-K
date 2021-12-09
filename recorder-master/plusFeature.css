@@ -1,0 +1,15 @@
+video{
+    border: 2px solid rgb(230, 22, 22);
+}
+h1 {
+    margin-top: 0.89em!important;
+   
+}
+
+header {
+    box-shadow:0!important;
+}
+
+.h1, h1 {
+    font-size: 2rem;
+}
