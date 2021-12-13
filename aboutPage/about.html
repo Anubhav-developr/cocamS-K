@@ -1,17 +1,13 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
-    <title>
-        Recorder v2.2
-    </title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./plusFeature.css">
-    <link rel="stylesheet" href="../recorder-master/../index.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./about.css">
+    <link rel="stylesheet" href="../index.css">
+    <title>Document</title>
 </head>
-
 <body>
     <header> 
         <div class="flexWrapper">
@@ -24,149 +20,61 @@
             </div>
         </div>
     </header>
-    <div class="bodyWrap c1">
-        <div class="container mt-3">
-        <span><a id="download" style="display: none;"><button type="button" class="btn btn-primary mb-4"> Download</button></a></span>
-        <button type="button" class="btn btn-danger" id="stop" disabled>Stop</button>
-        <button type="button" onclick="recordAudio()" class="btn btn-info">Record Audio</button>
-        <button type="button" onclick="recordVideo()" class="btn btn-info">Record Video</button>
-        <button type="button" onclick="recordScreen()" class="btn btn-info">Record Screen</button>
-        <div class="p-5">
-            <video autoplay height='480' width="640" muted></video>
+    <div class="wrap">
+        <div id="about">
+            <center>
+                <h1><span>About the Project</span></h1>
+                <hr>
+            </center>
         </div>
+        <div class="description  color">
+            <h3>
+                <span style="font-size:4rem">"</span>Webcam I.O is a project made to provide the ability to capture audio video and photo of device through built-in system camera and microphone , this project is equally be able to capture screen in both audio and video format .
+                   We could also draw the image to the canvas and download it locally, each feature comes with a support of downloading the files locally in respective format, which is also hosted to the leading hosting provider named as heroku, It is also indexed in google search console and hence it can be found by just searching in google!!, this is an opensource project so it is growing day by day. 
+            </h3>
         </div>
-       <div>
-         <a id="audio-element">play audio from here</a>
-       </div>
+    </div>
+    <div class="wrapper">
+
+    </div>
+    <div class="description  color">
+        <h2>Working & Functionality</h2>
+        
+        <h3>
+            This Project includes the tech stack of HTML,CSS and Javascript and is centered around the built in file API and WEBRTC technology, we are capturing the media and diplaying it through the respective screen asynchronously, to the storing part we are creating the blob and storing the media into it.
+            And finally coming to the screen recording we are using the corresponding webrtc getdisplayMedia() to record the screen, in the picture part we are using the canvas element and 2d context to draw the streaming image into it.
+
+                    </h3>
+    </div>
+    <div class="wrapper2">
+
+    </div>
+    <div class="description  color">
+        <h2>Applications</h2>
+        <h3>
+            There are quite obvious applications of the project in real life scenario, we know by our camera we are able to capture the image/video in the default file format only but this project solves this problem and allows the user to choose their preferred format to be able to use in their corresponding usecases. Also In modern days the techonology is growing exponentially but we tend to feel difficulty in recording the audio and screen recording in the internet in low-end devices, we figured out this problem and to solve it we had used the built in specified functions and minimal load to the web. </h3>
+    </div>
+    <div class="wrapper wrapper-xl">
+
+    </div>
+    <div class="description color">
+        <h2 style="border-bottom: 2px solid currentcolor;">Contributing Members</h2>
+        <!-- <h3>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem quaerat minus praesentium est fugit quis dignissimos ullam, quibusdam, molestiae, repellendus suscipit facere neque.
+               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit, illo temporibus ea, nulla cumque tempora id obcaecati unde adipisci sit veniam. Eaque maxime explicabo itaque rerum corrupti architecto voluptatum dolorum harum similique.
+        </h3> -->
+
+    </div>
+  
+    <div class="description color" style="justify-content:center">
+        <!-- <h2>Contributing Members</h2> -->
+        <!-- <h3>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem quaerat minus praesentium est fugit quis dignissimos ullam, quibusdam, molestiae, repellendus suscipit facere neque.
+               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit, illo temporibus ea, nulla cumque tempora id obcaecati unde adipisci sit veniam. Eaque maxime explicabo itaque rerum corrupti architecto voluptatum dolorum harum similique.
+        </h3> -->
+<div class="containing-img"><a href="https://www.linkedin.com/m/in/anubhav-mishra-51b751141"><img src="./anubhav.jpg" alt="members" width="200px" height="200px"></a></div>
+<div class="containing-img"><a href=""><img src="./ashutosh.jpg" alt="members"  width="200px" height="200px"></a></div>
+<div class="containing-img"><a href=""><img src="./kishan.jpg" alt="members"  width="200px" height="200px"></a></div>
     </div>
 </body>
-<script>
-    let shouldStop = false;
-    let stopped = false;
-    const videoElement = document.getElementsByTagName("video")[0];
-    const downloadLink = document.getElementById('download');
-    const stopButton = document.getElementById('stop');
-    function startRecord() {
-        $('.btn-info').prop('disabled', true);
-        $('#stop').prop('disabled', false);
-        $('#download').css('display', 'none')
-    }
-    function stopRecord() {
-        $('.btn-info').prop('disabled', false);
-        $('#stop').prop('disabled', true);
-        $('#download').css('display', 'block')
-    }
-    const audioRecordConstraints = {
-        echoCancellation: true
-    }
-
-    stopButton.addEventListener('click', function () {
-        shouldStop = true;
-    });
-
-    const handleRecord = function ({stream, mimeType}) {
-        startRecord()
-        let recordedChunks = [];
-        stopped = false;
-        const mediaRecorder = new MediaRecorder(stream);
-
-        mediaRecorder.ondataavailable = function (e) {
-            if (e.data.size > 0) {
-                recordedChunks.push(e.data);
-            }
-
-            if (shouldStop === true && stopped === false) {
-                mediaRecorder.stop();
-                stopped = true;
-            }
-        };
-
-        mediaRecorder.onstop = function () {
-            const blob = new Blob(recordedChunks, {
-                type: mimeType
-            });
-            recordedChunks = []
-            const filename = window.prompt('Enter file name');
-            downloadLink.href = URL.createObjectURL(blob);
-          downloadLink.download = `${filename || 'recording'}${mimeType}`;
-        //   if(mimeType == 'audio/ogg'){
-    document.getElementById("audio-element").href = URL.createObjectURL(blob);
-    
-// }
-  
-            stopRecord();
-            videoElement.srcObject = null;
-        };
-
-        mediaRecorder.start(200);
-    };
-
-    async function recordAudio() {
-        const mimeType = 'audio/ogg';
-        shouldStop = false;
-        const stream = await navigator.mediaDevices.getUserMedia({audio: audioRecordConstraints});
-        handleRecord({stream, mimeType})
-    }
-
-    async function recordVideo() {
-        const mimeType = 'video/webm';
-        shouldStop = false;
-        const constraints = {
-            audio: {
-                "echoCancellation": true
-            },
-            video: {
-                "width": {
-                    "min": 640,
-                    "max": 1024
-                },
-                "height": {
-                    "min": 480,
-                    "max": 768
-                }
-            }
-        };
-        const stream = await navigator.mediaDevices.getUserMedia(constraints);
-        videoElement.srcObject = stream;
-        handleRecord({stream, mimeType})
-    }
-
-    async function recordScreen() {
-        const mimeType = 'video/webm';
-        shouldStop = false;
-        const constraints = {
-            video: {
-                cursor: 'motion'
-            }
-        };
-        if(!(navigator.mediaDevices && navigator.mediaDevices.getDisplayMedia)) {
-            return window.alert('Screen Record not supported!')
-        }
-        let stream = null;
-        const displayStream = await navigator.mediaDevices.getDisplayMedia({video: {cursor: "motion"}, audio: {'echoCancellation': true}});
-        if(window.confirm("Record audio with screen?")){
-            const audioContext = new AudioContext();
-
-            const voiceStream = await navigator.mediaDevices.getUserMedia({ audio: {'echoCancellation': true}, video: false });
-            const userAudio = audioContext.createMediaStreamSource(voiceStream);
-            
-            const audioDestination = audioContext.createMediaStreamDestination();
-            userAudio.connect(audioDestination);
-
-            if(displayStream.getAudioTracks().length > 0) {
-                const displayAudio = audioContext.createMediaStreamSource(displayStream);
-                displayAudio.connect(audioDestination);
-            }
-
-            const tracks = [...displayStream.getVideoTracks(), ...audioDestination.stream.getTracks()]
-            stream = new MediaStream(tracks);
-            handleRecord({stream, mimeType})
-        } else {
-            stream = displayStream;
-            handleRecord({stream, mimeType});
-        };
-        videoElement.srcObject = stream;
-    }
-</script>
-
 </html>

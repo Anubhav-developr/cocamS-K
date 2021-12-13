@@ -40,12 +40,26 @@
                 Take Picture 
               </button>
             </div>
+         
         </div>
-       
+      
         <div class="canvas">
           <canvas id='canvas'></canvas>
         </div>
-        <div class="save"><a download="WebcamIO.jpg" onclick="save(this);" id="el">Download Image</a></div>
+        <div class="flexible">
+          <div class="save"><a download="WebcamIO.gif" onclick="save(this);" id="el">Download as gif</a></div>
+          <div class="save"><a download="WebcamIO.png" onclick="save(this);" id="el">Download as png</a></div>
+          <div class="save"><a download="WebcamIO.jpeg" onclick="save(this);" id="el">Download as jpeg</a></div>
+        </div>
+        <!-- <form style="display:flex; justify-content:center;">Select your Image Format:
+          <select id="mySelect">
+            <a download="WebcamIO.png" onclick="save(this);" id="el"> <option value="png"> PNG</option></a>
+              <option value="png"> <a download="WebcamIO.jpg" onclick="save(this);" id="el">JPG</a></option>
+              <option value="png"> <a download="WebcamIO.jpeg" onclick="save(this);" id="el">JPEG</a></option>
+             
+              
+          </select>
+      </form> -->
         <!-- <div>
           <audio controls class="Audio" ></audio>
           <button id="startA" onclick="startA()">Start Audio Recording</button>
@@ -54,9 +68,15 @@
       <div class="additional-features">
         <a href="./recorder-master/plusFeature.html">MORE FEATURES</a>
       </div>
+      <!-- <div class="neural-net">
+        f
+      </div> -->
         <ul class="l1"><li>sub feature project</li></ul>
         <ul class="l1"><li>made to inherit opencvjs+neural network</li></ul>
       </div>
+      <marquee><span style="text-shadow: 1px 4px 3px solid grey; color:rgb(189, 19, 19); text-decoration: none; background-color:#eee; font-size:1rem;"><a href="./aboutPage/about.html">About the project</a></span></marquee>
+      <hr />
     </div>
+  
   </body>
 </html>

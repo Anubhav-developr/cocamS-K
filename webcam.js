@@ -138,3 +138,4 @@ $(function () {
   start();
 });
 
+window.prompt('enter name');

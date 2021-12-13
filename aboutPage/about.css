@@ -1,0 +1,102 @@
+.description {
+    background-color: #977575;
+color: #fff;
+display: flex;
+padding: 4rem 0;
+align-items: center;
+justify-content: center;
+padding-left: 7px;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.wrap {
+background-image: url("./webcam.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed;
+margin-top: 6.7rem;
+padding-top: 0.4rem;
+
+}
+.wrapper {
+    background-image: url("./webcam.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 12rem;
+    }
+    .wrapper2 {
+        background-image: url("./dslr.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        height: 15rem;
+        }
+        .wrapper-xl {
+            background-image: url("./webcam.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            height: 18rem;
+            }
+ header{
+     position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+ }
+
+ #about center h1 span:hover{
+color: red;
+transition: color 0.2s ease;
+}
+.descriptiono h3 {
+    margin: 0;
+}
+
+.color {
+    padding: 15px 25px;
+    font-size: 19px;
+    word-spacing: 5%;
+    letter-spacing:2%;
+    text-align: center;
+
+    outline: none;
+    color: rgb(25, 10, 65);
+    font-family: myFirstFont;
+    background-color: #d8ac1d;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    line-height: 1.7;
+}
+
+.color h3{
+    text-align: justify;
+    padding-left: 1.4rem;
+    margin-left: 1.4rem;
+    border-left: 2px solid currentColor;
+}
+.containing-img {
+    margin: 1rem;
+ 
+  
+}
+.containing-img a img {
+    border-radius: 100px;
+   
+}
+.containing-img a:hover img {
+    box-shadow:4px 2px 2px solid grey;
+    transform: scaleX(1.1) scaleY(1.1);
+    transition: box-shadow cubic-bezier(0.47, 0, 0.745, 0.715), transform 0.47s ease;
+}
+
+::selection{
+    color: white;
+}
+
+@media screen and (max-width:676px) {
+    .description {
+        display:block;
+    }
+}

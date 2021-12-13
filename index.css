@@ -2,9 +2,19 @@
     /* background-color: rgb(212, 202, 221); */
 
 }
+@font-face {
+    font-family: myFirstFont;
+    src: url('./Fruktur-Regular.ttf');
+  }
+
+  #about {
+    font-family: myFirstFont;
+  }
+
+
 .c1 {
     border: 5px solid coral;
-    background-color: rgb(212, 202, 221);
+    background-color: rgb(204, 184, 172);
 
 }
 
@@ -20,14 +30,28 @@
     text-align: center;
     cursor: pointer;
     outline: none;
-    color: #fff;
-    background-color: #133cf5;
+    color: rgb(25, 10, 65);
+    font-family: myFirstFont;
+    background-color: #d8ac1d;
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
   }
-  
-  .button:hover {background-color: #f1f52f}
+
+  .flexible{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .flexible div {
+      margin: 1rem;
+     
+  }
+  .flexible div a{
+    padding: 1rem;
+    font-weight: 600;
+  }
+  .button:hover { background-color: #133cf5;}
   
   .button:active {
     background-color: #1cc4f7;
@@ -51,10 +75,6 @@
 }
   /*   header      */
 
-@font-face {
-    font-family: myFirstFont;
-    src: url('./Fruktur-Regular.ttf');
-  }
 
 
   body {
@@ -91,8 +111,28 @@ background-color:yellow;
 }
 
 .takepicture button{
-    width:10%;
+    width:30%;
     height: 10%;
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: rgb(25, 10, 65);
+    font-family: myFirstFont;
+    background-color: #d8ac1d;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.takepicture button:hover{
+    background-color: #133cf5;
+}
+.takepicture button:active {
+    background-color: #1cc4f7;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
 .takepicture {
@@ -103,11 +143,14 @@ background-color:yellow;
 .canvas canvas {
    
     border: 2px solid rgb(230, 22, 22);
+    width: 25%;
+    height: 20%;
 }
 
 .canvas {
     display: flex;
     justify-content:center;
+
    
 }
 
