@@ -205,3 +205,20 @@ background-color:yellow;
     padding:0.35em;
 }
 
+
+.aboutProject:hover {
+background-color:#b1d60b;
+border: 2px solid red;
+/* transform: rotateX(53deg); */
+box-shadow: 2px 4px 9px yellow;
+
+transition: all 0.5s ease;
+font-size:1.5rem;
+}
+
+.aboutit {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
